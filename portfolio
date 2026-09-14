@@ -1,0 +1,1093 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hossain Mahmud  Portfolio</title>
+    <style>
+        /* =========================
+        BASIC RESET
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #095d60;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        /* =========================
+        COLORS
+        ========================= */
+
+        :root {
+            --background: #0b0f19;
+            --card: #111827;
+            --card-light: #172033;
+            --text: #ffffff;
+            --muted: #a7afc0;
+            --accent: #00d9ff;
+            --border: #263044;
+        }
+
+        /* =========================
+        NAVBAR
+        ========================= */
+
+        header {
+            width: 100%;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+            background: rgba(11, 15, 25, 0.95);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .navbar {
+            max-width: 1200px;
+            margin: auto;
+            height: 75px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 25px;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .logo span,
+        h1 span,
+        h2 span,
+        footer span {
+            color: var(--accent);
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        /* =========================
+        HERO
+        ========================= */
+
+        .hero {
+            min-height: 100vh;
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 120px 25px 70px;
+        }
+
+        .hero-content {
+            max-width: 650px;
+        }
+
+        .small-title {
+            color: var(--accent);
+            letter-spacing: 4px;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-size: 65px;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        .hero h2 {
+            font-size: 24px;
+            font-weight: normal;
+            color: #d6dbe5;
+            margin-bottom: 20px;
+        }
+
+        .hero-text {
+            color: var(--muted);
+            max-width: 600px;
+            font-size: 17px;
+        }
+
+        .hero-buttons {
+            margin-top: 35px;
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .primary-btn {
+            background: var(--accent);
+            color: #071018;
+        }
+
+        .primary-btn:hover {
+            transform: translateY(-3px);
+        }
+
+        .secondary-btn {
+            color: #ffffff;
+            border: 1px solid var(--accent);
+        }
+
+        .secondary-btn:hover {
+            background: var(--accent);
+            color: #4eec39;
+        }
+
+        /* =========================
+        PROFILE CIRCLE
+        ========================= */
+
+        .hero-image {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .profile-circle {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 75px;
+            font-weight: bold;
+            color: var(--accent);
+            border: 2px solid var(--accent);
+            background: var(--card);
+            box-shadow: 0 0 60px rgba(0, 217, 255, 0.15);
+        }
+
+        /* =========================
+        COMMON SECTION
+        ========================= */
+
+        .section {
+            max-width: 1200px;
+            margin: auto;
+            padding: 100px 25px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title p {
+            color: var(--accent);
+            letter-spacing: 3px;
+            font-size: 13px;
+        }
+
+        .section-title h2 {
+            font-size: 42px;
+            margin-top: 8px;
+        }
+
+        /* =========================
+        ABOUT
+        ========================= */
+
+        .about-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        .about-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            padding: 35px;
+            border-radius: 10px;
+        }
+
+        .about-card h3 {
+            font-size: 25px;
+            margin-bottom: 20px;
+        }
+
+        .about-card p {
+            color: var(--muted);
+            margin-bottom: 15px;
+        }
+
+        .about-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .info-box {
+            padding: 25px;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        .info-box:hover {
+            border-color: var(--accent);
+            transform: translateY(-5px);
+        }
+
+        .info-box h3 {
+            color: var(--accent);
+            margin-bottom: 8px;
+        }
+
+        .info-box p {
+            color: var(--muted);
+        }
+
+        /* =========================
+        SKILLS
+        ========================= */
+
+        .skills-section {
+            max-width: none;
+            background: #080c14;
+        }
+
+        .skills-section > * {
+            max-width: 1150px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .skill-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            padding: 35px 25px;
+            border-radius: 10px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--accent);
+        }
+
+        .skill-icon {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--accent);
+            border-radius: 10px;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        .skill-card h3 {
+            margin-bottom: 10px;
+        }
+
+        .skill-card p {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        /* =========================
+        PROJECTS
+        ========================= */
+
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .project-card {
+            position: relative;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 35px;
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-7px);
+            border-color: var(--accent);
+        }
+
+        .project-number {
+            color: var(--accent);
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .project-card h3 {
+            font-size: 23px;
+            margin-bottom: 15px;
+        }
+
+        .project-card p {
+            color: var(--muted);
+            margin-bottom: 20px;
+        }
+
+        .project-tech {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 25px;
+        }
+
+        .project-tech span {
+            padding: 5px 12px;
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            color: var(--accent);
+            font-size: 12px;
+        }
+
+        .project-link {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* =========================
+        EDUCATION
+        ========================= */
+
+        .education-section {
+            background: #080c14;
+            max-width: none;
+        }
+
+        .education-section > * {
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .timeline {
+            border-left: 2px solid var(--accent);
+            padding-left: 35px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 45px;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            background: var(--accent);
+            border-radius: 50%;
+            left: -44px;
+            top: 5px;
+        }
+
+        .timeline-content {
+            background: var(--card);
+            border: 1px solid var(--border);
+            padding: 25px;
+            border-radius: 10px;
+        }
+
+        .timeline-content span {
+            color: var(--accent);
+            font-size: 14px;
+        }
+
+        .timeline-content h3 {
+            margin: 8px 0;
+        }
+
+        .timeline-content p {
+            color: var(--muted);
+        }
+
+        /* =========================
+        CONTACT
+        ========================= */
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+
+        .contact-info h3 {
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        .contact-info > p {
+            color: var(--muted);
+            margin-bottom: 30px;
+        }
+
+        .contact-item {
+            margin-bottom: 20px;
+        }
+
+        .contact-item strong {
+            color: var(--accent);
+        }
+
+        .contact-item p {
+            color: var(--muted);
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 14px 16px;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            color: #ffffff;
+            font-family: inherit;
+            outline: none;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-color: var(--accent);
+        }
+
+        .contact-form textarea {
+            resize: vertical;
+        }
+
+        .contact-form button {
+            border: none;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        /* =========================
+        FOOTER
+        ========================= */
+
+        footer {
+            background: #060911;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .footer-content h2 {
+            font-size: 28px;
+        }
+
+        .footer-content > p {
+            color: var(--muted);
+            margin: 10px 0 20px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-bottom: 25px;
+        }
+
+        .social-links a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .social-links a:hover {
+            text-decoration: underline;
+        }
+
+        .copyright {
+            font-size: 13px;
+        }
+
+        /* =========================
+        RESPONSIVE DESIGN
+        ========================= */
+
+        @media (max-width: 900px) {
+            .nav-links {
+                gap: 15px;
+            }
+
+            .hero {
+                flex-direction: column-reverse;
+                text-align: center;
+                gap: 50px;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 50px;
+            }
+
+            .about-container,
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 650px) {
+            .navbar {
+                height: auto;
+                padding: 20px;
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 12px;
+            }
+
+            .hero {
+                padding-top: 160px;
+            }
+
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .hero h2 {
+                font-size: 19px;
+            }
+
+            .profile-circle {
+                width: 220px;
+                height: 220px;
+                font-size: 55px;
+            }
+
+            .skills-container,
+            .projects-container,
+            .about-info {
+                grid-template-columns: 1fr;
+            }
+
+            .section {
+                padding: 70px 20px;
+            }
+
+            .section-title h2 {
+                font-size: 34px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header>
+        <nav class="navbar">
+
+            <div class="logo">
+                Hossain<span>.</span>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+        </nav>
+    </header>
+
+
+    <!-- ================= HERO ================= -->
+
+    <section id="home" class="hero">
+
+        <div class="hero-content">
+
+            <p class="small-title">HELLO, I'M</p>
+
+            <h1>
+                Hossain <span>Mahmud</span>
+            </h1>
+
+            <h2>Computer Science & Engineering Student</h2>
+
+            <p class="hero-text">
+                A motivated Computer Science and Engineering student
+                with a strong foundation in C, C++, object-oriented
+                programming, and problem-solving.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#projects" class="btn primary-btn">
+                    View Projects
+                </a>
+
+                <a href="#contact" class="btn secondary-btn">
+                    Contact Me
+                </a>
+            </div>
+
+        </div>
+
+        <div class="hero-image">
+
+            <div class="profile-circle">
+              
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= ABOUT ================= -->
+
+    <section id="about" class="section">
+
+        <div class="section-title">
+            <p>GET TO KNOW ME</p>
+            <h2>About <span>Me</span></h2>
+        </div>
+
+        <div class="about-container">
+
+            <div class="about-card">
+
+                <h3>Who I Am</h3>
+
+                <p>
+                    I am a Computer Science and Engineering student
+                    interested in programming, software development,
+                    and problem-solving.
+                </p>
+
+                <p>
+                    I enjoy learning programming concepts and building
+                    projects that help me improve my technical skills.
+                </p>
+
+            </div>
+
+
+            <div class="about-info">
+
+                <div class="info-box">
+                    <h3>Education</h3>
+                    <p>
+                        B.Sc. in Computer Science & Engineering
+                    </p>
+                </div>
+
+                <div class="info-box">
+                    <h3>University</h3>
+                    <p>
+                        International Islamic University Chittagong
+                    </p>
+                </div>
+
+                <div class="info-box">
+                    <h3>Interest</h3>
+                    <p>
+                        Software Engineering & Programming
+                    </p>
+                </div>
+
+                <div class="info-box">
+                    <h3>Goal</h3>
+                    <p>
+                        Become a Software Engineer
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= SKILLS ================= -->
+
+    <section id="skills" class="section skills-section">
+
+        <div class="section-title">
+            <p>WHAT I KNOW</p>
+            <h2>My <span>Skills</span></h2>
+        </div>
+
+        <div class="skills-container">
+
+            <div class="skill-card">
+                <div class="skill-icon">C</div>
+                <h3>C Programming</h3>
+                <p>
+                    Programming fundamentals and problem solving.
+                </p>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon">C++</div>
+                <h3>C++</h3>
+                <p>
+                    Object-oriented programming and STL.
+                </p>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon">OOP</div>
+                <h3>OOP</h3>
+                <p>
+                    Classes, inheritance, polymorphism and overloading.
+                </p>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon">&lt;/&gt;</div>
+                <h3>HTML & CSS</h3>
+                <p>
+                    Building clean and responsive web interfaces.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= PROJECTS ================= -->
+
+    <section id="projects" class="section">
+
+        <div class="section-title">
+            <p>MY WORK</p>
+            <h2>Featured <span>Projects</span></h2>
+        </div>
+
+        <div class="projects-container">
+
+            <!-- Project 1 -->
+
+            <div class="project-card">
+
+                <div class="project-number">
+                    01
+                </div>
+
+                <h3>Bank Management System</h3>
+
+                <p>
+                    A programming project designed to manage basic
+                    banking operations such as account information,
+                    deposits and withdrawals.
+                </p>
+
+                <div class="project-tech">
+                    <span>C</span>
+                    <span>Programming</span>
+                </div>
+
+                <a href="#" class="project-link">
+                    View Project →
+                </a>
+
+            </div>
+
+
+            <!-- Project 2 -->
+
+            <div class="project-card">
+
+                <div class="project-number">
+                    02
+                </div>
+
+                <h3>Blood Group Management System</h3>
+
+                <p>
+                    A management system concept for storing and
+                    managing blood donor information based on blood
+                    groups.
+                </p>
+
+                <div class="project-tech">
+                    <span>C++</span>
+                    <span>OOP</span>
+                    <span>STL</span>
+                </div>
+
+                <a href="#" class="project-link">
+                    View Project →
+                </a>
+
+            </div>
+
+
+            <!-- Project 3 -->
+
+            <div class="project-card">
+
+                <div class="project-number">
+                    03
+                </div>
+
+                <h3>Ultrasonic Radar System</h3>
+
+                <p>
+                    An Arduino-based obstacle detection project using
+                    an ultrasonic sensor and servo motor.
+                </p>
+
+                <div class="project-tech">
+                    <span>Arduino</span>
+                    <span>C++</span>
+                    <span>Proteus</span>
+                </div>
+
+                <a href="#" class="project-link">
+                    View Project →
+                </a>
+
+            </div>
+
+
+            <!-- Project 4 -->
+
+            <div class="project-card">
+
+                <div class="project-number">
+                    04
+                </div>
+
+                <h3>Personal Portfolio</h3>
+
+                <p>
+                    A responsive personal portfolio website created
+                    using HTML and CSS.
+                </p>
+
+                <div class="project-tech">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                </div>
+
+                <a href="#" class="project-link">
+                    View Project →
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= EDUCATION ================= -->
+
+    <section id="education" class="section education-section">
+
+        <div class="section-title">
+            <p>MY JOURNEY</p>
+            <h2>Education</h2>
+        </div>
+
+        <div class="timeline">
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-content">
+
+                    <span>2025 - Present</span>
+
+                    <h3>
+                        B.Sc. in Computer Science & Engineering
+                    </h3>
+
+                    <p>
+                        International Islamic University Chittagong
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CONTACT ================= -->
+
+    <section id="contact" class="section contact-section">
+
+        <div class="section-title">
+
+            <p>GET IN TOUCH</p>
+
+            <h2>Contact <span>Me</span></h2>
+
+        </div>
+
+
+        <div class="contact-container">
+
+            <div class="contact-info">
+
+                <h3>Let's Work Together</h3>
+
+                <p>
+                    If you want to discuss a project, collaboration,
+                    or simply connect with me, feel free to contact me.
+                </p>
+
+                <div class="contact-item">
+                    <strong>Email</strong>
+                    <p>abcd@gmail.com</p>
+                </div>
+
+                <div class="contact-item">
+                    <strong>Phone</strong>
+                    <p>+880 1322375XXX</p>
+                </div>
+
+                <div class="contact-item">
+                    <strong>Location</strong>
+                    <p>Bangladesh</p>
+                </div>
+
+            </div>
+
+
+            <form class="contact-form">
+
+                <input
+                    type="text"
+                    placeholder="Your Name"
+                    required
+                >
+
+                <input
+                    type="email"
+                    placeholder="Your Email"
+                    required
+                >
+
+                <input
+                    type="text"
+                    placeholder="Subject"
+                    required
+                >
+
+                <textarea
+                    placeholder="Your Message"
+                    rows="6"
+                    required
+                ></textarea>
+
+                <button type="submit" class="btn primary-btn">
+                    Send Message
+                </button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="footer-content">
+
+            <h2>Hossain<span>.</span></h2>
+
+            <p>
+                Computer Science & Engineering Student
+            </p>
+
+            <div class="social-links">
+
+                <a href="#">GitHub</a>
+                <a href="#">LinkedIn</a>
+                <a href="#">Facebook</a>
+
+            </div>
+
+            <p class="copyright">
+                © 2026 Hossain Mahmud. All Rights Reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+</body>
+</html>
